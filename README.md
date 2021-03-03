@@ -1,5 +1,54 @@
 # caption-generation
-generation of caption from image
+
+#DATA
+Flickr8k dataset
+Flickr8k dataset is a dataset of of 8k image with captions.Below are some features of this dataset:
+•	It is small in size. So, the model can be trained easily on low-end laptops/desktops.
+•	Data is properly labelled.
+•	For each image 5 captions are provided.
+•	The dataset is available for free.
+
+Data pre-processing and cleaning is an important part of the whole model building process. Understanding the data helps us to build more accurate models.
+After extracting zip files you will find below folders
+Flickr8k_Dataset: Contains a total of 8092 images in JPEG format with different shapes and sizes. Of which 6000 are used for training, 1000 for test and 1000 for development.
+Flickr8k_text : Contains text files describing train_set ,test_set. Flickr8k.token.txt contains 5 captions for each image i.e. total 40460 captions.
+
+Glove.6B embeddings
+GloVe stands for Global Vectors for Word Representation. It was developed by Jeffrey Pennington,   Richard Socher,   Christopher D. Manning at nlp department stanford.
+
+
+Highlights
+1.   Nearest neighbors
+The Euclidean distance (or cosine similarity) between two word vectors provides an effective method for measuring the linguistic or semantic similarity of the corresponding words. Sometimes, the nearest neighbors according to this metric reveal rare but relevant words that lie outside an average human's vocabulary. For example, here are the closest words to the target word frog:
+
+•	frog
+•	frogs
+•	toad
+•	litoria
+•	leptodactylidae
+•	rana
+•	lizard
+•	eleutherodactylus
+
+
+2.   Linear substructures
+The similarity metrics used for nearest neighbor evaluations produce a single scalar that quantifies the relatedness of two words. This simplicity can be problematic since two given words almost always exhibit more intricate relationships than can be captured by a single number. For example, man may be regarded as similar to woman in that both words describe human beings; on the other hand, the two words are often considered opposites since they highlight a primary axis along which humans differ from one another.
+
+In order to capture in a quantitative way the nuance necessary to distinguish man from woman, it is necessary for a model to associate more than a single number to the word pair. A natural and simple candidate for an enlarged set of discriminative numbers is the vector difference between the two word vectors. GloVe is designed in order that such vector differences capture as much as possible the meaning specified by the juxtaposition of two words.
+
+  
+man - woman                                       company - ceo
+  
+city - zip code                                comparative - superlative
+
+The underlying concept that distinguishes man from woman, i.e. sex or gender, may be equivalently specified by various other word pairs, such as king and queen or brother and sister. To state this observation mathematically, we might expect that the vector differences man - woman, king - queen, and brother - sister might all be roughly equal. This property and other interesting patterns can be observed in the above set of visualizations.
+
+
+
+
+
+
+#generation of caption from image
 Model made and the collab file both are attached.The project tries to guess the caption of images given in the specifed url or uploade
 Image captioning is a problem that belong to two domains: NLP(Natural Language Processing)
 and CV (Computer Vision).In our project we have combined LSTM text generation with the computer vision powers of a convolutional neural network. 
