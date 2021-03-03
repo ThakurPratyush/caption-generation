@@ -46,6 +46,11 @@ The underlying concept that distinguishes man from woman, i.e. sex or gender, ma
 
 
 
+ARCHITECTURE
+![image](https://user-images.githubusercontent.com/42847642/109812143-b7a26300-7c51-11eb-8fa4-f5a838a8c55d.png)
+
+
+
 
 
 #generation of caption from image
